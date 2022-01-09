@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Belangrijk/Openscadjes
+php -S localhost:5056 > /dev/null 2>&1 &

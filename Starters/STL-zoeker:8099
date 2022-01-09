@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Belangrijk/STL-Viewer/Site
+php -S localhost:8099 > phpd.log 2>&1 &
+exit 0
+

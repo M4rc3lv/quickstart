@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Projecten/ThingiRipper/ripper
+xsp4 --nonstop --port 8070 > /dev/null 2>&1 &

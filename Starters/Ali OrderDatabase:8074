@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Projecten/AliDb
+php -S localhost:8074 > phpd.log 2>&1 &
+exit 0
+

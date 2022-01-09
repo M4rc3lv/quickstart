@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Projecten/ProjBrowser/projbrowser
+xsp4 --nonstop --port 8071 > /dev/null 2>&1 &
+exit
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Belangrijk/OctoController/octocontrolphp
+php -S localhost:5010 > /dev/null 2>&1 &
+

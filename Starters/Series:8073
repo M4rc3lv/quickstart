@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Projecten/KodiSeriekeuzemaker/site
+php -S localhost:8073 > /dev/null 2>&1 &
+exit
+

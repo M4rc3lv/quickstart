@@ -1,0 +1,4 @@
+#Dit script wordt vanuit Linux Mint's Menu Start > Opstarttoepassingen GUI opgestart
+cd /media/marcel/4TB/Proj/Belangrijk/Quickstart
+php -S localhost:5011 &
+exit

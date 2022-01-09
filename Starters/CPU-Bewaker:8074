@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /media/marcel/4TB/Proj/Projecten/CPUTempDisplay/Server
+php -S 192.168.0.100:8074 > /dev/null 2>&1 &
+exit 0
+
