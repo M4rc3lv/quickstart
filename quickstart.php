@@ -9,6 +9,8 @@
    .ok {color:green}
    .nok {color:red}
    .tt {font-size:0.8em; color:grey; font-family: monospace;}
+   .starterinfo {font-size:0.8em;color:grey;margin-top:4px;}
+   .error {background:#CC2525; color:white;}
   </style>
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   <script src="quikstart.js"></script>
@@ -40,13 +42,42 @@
     $debug =  "<code>".($path."/".$_GET["start"])."</code>";
     $debug = $debug . "<code>".shell_exec("\"".$path."/".$_GET["start"]."\"")."</code>";
    }
+   if(isset($_GET['startpoort'])) {
+    $Poort = $_GET["poort"];
+    $Pad = $_GET["pad"];
+    unlink("fouten");
+    shell_exec("php -S localhost:$Poort -t $Pad  > /dev/null 2>fouten &");
+    sleep(0.8);
+    header("Location: quickstart.php");
+    die();
+   }
+
   ?>
   <div class="m w3-container">
   <a href="quickstart.php"><img class="logo" src="https://marcelv.net/pix/logo.png" /><h1>Webservers</h1></a>
   <table class='w3-table w3-border w3-bordered'>
-  <tr><td colspan="3"><?php echo $debug; ?></td></tr>
-  <tr><th>Status</th><th>Opstarten</th><th>Open site</th></tr>
+  <?php if(file_exists("fouten") && filesize("fouten")>1) { ?>
+   <tr><td colspan="3" class='info'><?php $s=file_get_contents("fouten"); echo $s; ?></td></tr>
+   <script>$.ajax({url:'delete.php'});</script>
+  <?php } ?>
+
+  <tr><th>Status</th><th width="45%">Opstarten</th><th width="45%">Open site</th></tr>
   <?php
+   $Starters = parse_ini_file("config.ini");
+   for($i=0; $i<count($Starters["Starter"]); $i++) {
+    $Poort=$Starters["Poort"][$i];
+    $Pad=$Starters["Pad"][$i];
+    $Naam=$Starters["Starter"][$i];
+    $Info=$Starters["Info"][$i];
+    $Url="http://localhost:$Poort";
+    echo "<tr><td>".Ping("localhost:$Poort")."</td>";
+    echo "<td>&#9658; <a href='quickstart.php?startpoort=1&poort=$Poort&pad=$Pad'>$Naam</a><div class='starterinfo'>$Info</div></td>";
+    echo "<td><a target=_blank data-linktype='site' href='http://localhost:$Poort'>$Naam</a><div class='starterinfo'>$Url</div></td>";
+    echo "</tr>";
+    //echo "<tr><td class='klein'>$Info</td></tr>";
+   }
+   die();
+
    // Scan Projectfolder(s) om te kijken wie er een start-shell-script heeft
    $files = scandir($path);
    for($x = 0; $x < count($files); $x++) {
