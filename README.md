@@ -7,7 +7,7 @@ Het bestand <em>start</em> wordt vanuit Linux Mint's Menu Start > Opstarttoepass
 
 **Versie 2.0**
 
-Vernieuwe versie: werkt alleen met PHP -S (lokale PHP-instantie) en is verbetert qua foutafhandeling en laat meldingen duidelijker zien.
+Nieuwe versie: werkt alleen met PHP -S (lokale PHP-instantie) en is verbetert qua foutafhandeling en laat meldingen duidelijker zien.
 ![Schermafdruk](https://raw.githubusercontent.com/M4rc3lv/quickstart/main/Screenshot/Versie2.png)
 
 
