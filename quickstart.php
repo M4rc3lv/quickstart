@@ -71,8 +71,8 @@
     $Info=$Starters["Info"][$i];
     $Url="http://localhost:$Poort";
     echo "<tr><td>".Ping("localhost:$Poort")."</td>";
-    echo "<td>&#9658; <a href='quickstart.php?startpoort=1&poort=$Poort&pad=$Pad'>$Naam</a><div class='starterinfo'>$Info</div></td>";
-    echo "<td><a target=_blank data-linktype='site' href='http://localhost:$Poort'>$Naam</a><div class='starterinfo'>$Url</div></td>";
+    echo "<td>&#9656; <a href='quickstart.php?startpoort=1&poort=$Poort&pad=$Pad'>$Naam</a><div class='starterinfo'>$Info</div></td>";
+    echo "<td><a target=_blank data-linktype='site' href='http://localhost:$Poort'>$Naam</a> &#8599;<div class='starterinfo'>$Url</div></td>";
     echo "</tr>";
     //echo "<tr><td class='klein'>$Info</td></tr>";
    }
